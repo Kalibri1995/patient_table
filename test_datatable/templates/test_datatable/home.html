@@ -81,14 +81,13 @@
             color: black;
         }
 
-        /* Add a color to the active/current link */
         .topnav h1.active {
             background-color: #4CAF50;
             color: white;
         }
 
         .search-filter {
-            text-align: center; /* Центрируем поле поиска по горизонтали */
+            text-align: center;
         }
 
         .search-filter input[type="text"] {
@@ -142,10 +141,10 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 9999;
-            justify-content: center; /* Горизонтальное центрирование по горизонтали */
-            align-items: center; /* Вертикальное центрирование по вертикали */
-            border-radius: 0 !important; /* Убрать полукруглые углы */
-            clip-path: none !important; /* Убрать маску обрезки */
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 !important;
+            clip-path: none !important;
         }
 
         .loading-spinner {
@@ -163,7 +162,7 @@
                 #0000 0 calc(var(--s) + var(--g))
             ) left / calc((var(--n) + 1) * (var(--s) + var(--g))) 100% no-repeat content-box;
             animation: load 1.5s steps(calc(var(--n) + 1)) infinite;
-            color: green; /* Измените цвет анимации на зеленый */
+            color: green;
         }
         @keyframes load {
           0% {background-size: 0% 100%}
@@ -176,12 +175,8 @@
         }
 
         .loading-table.loading {
-            opacity: 0.5; /* Устанавливаем прозрачность во время загрузки */
+            opacity: 0.5;
         }
-
-
-
-
 
         /* Стили для левой и правой части фильтров */
         .left-filters, .right-filters {
@@ -189,7 +184,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 10px; /* Добавьте необходимый внутренний отступ */
+            padding: 10px;
         }
 
         /* Стили для меток и элементов ввода */
@@ -202,10 +197,10 @@
         .modal-content {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Распределить элементы по вертикали */
-            align-items: center; /* Выровнять по центру по горизонтали */
-            max-height: 35vh; /* Установите максимальную высоту по вашему выбору */
-            height: 100%; /* Занимать 100% высоты контейнера */
+            justify-content: space-between;
+            align-items: center;
+            max-height: 35vh;
+            height: 100%;
         }
 
         /* Стили для кнопки применения фильтра */
@@ -285,7 +280,6 @@
                 </select>
             </div>
             <div class="clearfix"></div>
-            <!-- Кнопка для применения фильтра -->
         </div>
         <button id="apply-filter">Применить</button>
     </div>
@@ -384,7 +378,7 @@
         // Обработчик клика на кнопку "Главная страница"
         $('#home-button').click(function () {
             showLoading();
-            window.location.href = "/"; // Установите здесь URL вашей главной страницы
+            window.location.href = "/";
         });
 
         // Обработчик клика на кнопку "Применить фильтр"
@@ -409,8 +403,8 @@
         function applyFilter() {
             var query = $('#searchInput').val();
             var birthdateOrder = $('#birthdate-filter').val();
-            var birthdateBefore = $('#birthdate-before').val(); // Получить значение "Родился до"
-            var birthdateAfter = $('#birthdate-after').val();   // Получить значение "Родился после"
+            var birthdateBefore = $('#birthdate-before').val();
+            var birthdateAfter = $('#birthdate-after').val();
             var studyOrder = $('#study-filter').val();
             var studyBefore = $('#study-before').val();
             var studyAfter = $('#study-after').val();
@@ -419,7 +413,6 @@
             var uuidOrder = $('#uuid-filter').val();
             var itemsPerPage = $('#items-per-page').val();
 
-            // Передать значения "Родился до" и "Родился после" в URL
             window.location.href = "?page=1&items_per_page=" + itemsPerPage + "&query=" + query + "&birthdate_order=" + birthdateOrder + "&birthdate_before=" + birthdateBefore + "&birthdate_after=" + birthdateAfter + "&study_order=" + studyOrder + "&study_before=" + studyBefore + "&study_after=" + studyAfter + "&modality_order=" + modalityOrder + "&patient_order=" + patientOrder + "&uuid_order=" + uuidOrder;
         }
 
@@ -444,8 +437,8 @@
         function searchTable() {
             var query = $('#searchInput').val();
             var birthdateOrder = $('#birthdate-filter').val();
-            var birthdateBefore = $('#birthdate-before').val(); // Получить значение "Родился до"
-            var birthdateAfter = $('#birthdate-after').val();   // Получить значение "Родился после"
+            var birthdateBefore = $('#birthdate-before').val();
+            var birthdateAfter = $('#birthdate-after').val();
             var studyOrder = $('#study-filter').val();
             var studyBefore = $('#study-before').val();
             var studyAfter = $('#study-after').val();
@@ -454,7 +447,6 @@
             var uuidOrder = $('#uuid-filter').val();
             var itemsPerPage = $('#items-per-page').val();
 
-            // Передать значения "Родился до" и "Родился после" в URL
             window.location.href = "?page=1&items_per_page=" + itemsPerPage + "&query=" + query + "&birthdate_order=" + birthdateOrder + "&birthdate_before=" + birthdateBefore + "&birthdate_after=" + birthdateAfter + "&study_order=" + studyOrder + "&study_before=" + studyBefore + "&study_after=" + studyAfter + "&modality_order=" + modalityOrder + "&patient_order=" + patientOrder + "&uuid_order=" + uuidOrder;
         }
 
@@ -463,8 +455,8 @@
             var urlParams = new URLSearchParams(window.location.search);
             var birthdateOrder = urlParams.get("birthdate_order");
             var query = urlParams.get("query");
-            var birthdateBefore = urlParams.get("birthdate_before"); // Получить параметр "Родился до"
-            var birthdateAfter = urlParams.get("birthdate_after");   // Получить параметр "Родился после"
+            var birthdateBefore = urlParams.get("birthdate_before");
+            var birthdateAfter = urlParams.get("birthdate_after");
             var studyOrder = urlParams.get("study_order");
             var studyBefore = urlParams.get("study_before");
             var studyAfter = urlParams.get("study_after");
@@ -481,35 +473,35 @@
             }
 
             if (birthdateBefore) {
-                $('#birthdate-before').val(birthdateBefore); // Установить значение "Родился до"
+                $('#birthdate-before').val(birthdateBefore);
             }
 
             if (birthdateAfter) {
-                $('#birthdate-after').val(birthdateAfter);   // Установить значение "Родился после"
+                $('#birthdate-after').val(birthdateAfter);
             }
 
             if (studyOrder) {
-                $('#study-filter').val(studyOrder);   // Установить значение "Родился после"
+                $('#study-filter').val(studyOrder);
             }
 
             if (studyBefore) {
-                $('#study-before').val(studyBefore); // Установить значение "Родился до"
+                $('#study-before').val(studyBefore);
             }
 
             if (studyAfter) {
-                $('#study-after').val(studyAfter);   // Установить значение "Родился после"
+                $('#study-after').val(studyAfter);
             }
 
             if (modalityOrder) {
-                $('#modality-order').val(modalityOrder);   // Установить значение "Родился после"
+                $('#modality-order').val(modalityOrder);
             }
 
             if (patientOrder) {
-                $('#patient-filter').val(patientOrder);   // Установить значение "Родился после"
+                $('#patient-filter').val(patientOrder);
             }
 
             if (uuidOrder) {
-                $('#uuid-filter').val(uuidOrder);   // Установить значение "Родился после"
+                $('#uuid-filter').val(uuidOrder);
             }
         });
 
@@ -525,8 +517,6 @@
                 }
                 isFilterOpen = !isFilterOpen; // Инвертировать состояние флага
             });
-
-            // Остальной ваш код здесь...
         });
     </script>
 </body>

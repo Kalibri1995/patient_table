@@ -115,7 +115,6 @@ def home(request):
         })
 
     except Exception as e:
-        # Обработка ошибок, если они возникнут
         return render(request, 'error.html', {'error_message': str(e)})
 
 
